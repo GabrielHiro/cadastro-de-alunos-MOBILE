@@ -48,7 +48,6 @@ public class ViaCEPResponse {
 
     public void parseJSON(JSONObject json) {
         try {
-            // Extrair os dados do JSONObject e atribuí-los às variáveis de instância
             logradouro = json.getString("logradouro");
             complemento = json.getString("complemento");
             bairro = json.getString("bairro");

@@ -24,7 +24,7 @@ public class ListaAlunosActivity extends AppCompatActivity {
         alunoAdapter = new AlunoAdapter(alunosList);
         recyclerViewAlunos.setAdapter(alunoAdapter);
 
-        carregarAlunos(); // Chama o método para carregar os alunos ao criar a activity
+        carregarAlunos();
     }
 
     private void carregarAlunos() {

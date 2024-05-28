@@ -18,6 +18,4 @@
         android:layout_height="wrap_content"
         android:text="Nome: " />
 
-    <!-- Adicione outros TextViews ou componentes conforme necessário -->
-
 </LinearLayout>

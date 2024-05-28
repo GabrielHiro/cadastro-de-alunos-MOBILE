@@ -49,7 +49,7 @@ public class ViaCEPUtil {
                 if (result != null) {
                     listener.onCEPResult(result);
                 } else {
-                    // Tratar erro
+                    // Tratar erro**
                 }
             }
         }.execute(cep);

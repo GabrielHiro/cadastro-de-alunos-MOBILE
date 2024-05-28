@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
         buttonCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Abrir a tela de cadastro quando o botão for clicado
                 Intent intent = new Intent(MainActivity.this, CadastroAlunoActivity.class);
                 startActivity(intent);
             }
@@ -28,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         buttonLista.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Abrir a tela de lista quando o botão for clicado
                 Intent intent = new Intent(MainActivity.this, ListaAlunosActivity.class);
                 startActivity(intent);
             }

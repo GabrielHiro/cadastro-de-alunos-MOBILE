@@ -28,7 +28,6 @@ public class AlunoAdapter extends RecyclerView.Adapter<AlunoAdapter.AlunoViewHol
         Aluno aluno = alunosList.get(position);
         holder.textViewRA.setText(String.valueOf(aluno.getRa()));
         holder.textViewNome.setText(aluno.getNome());
-        // Bind outros campos aqui, se necessário
     }
 
     @Override
@@ -39,13 +38,11 @@ public class AlunoAdapter extends RecyclerView.Adapter<AlunoAdapter.AlunoViewHol
     public static class AlunoViewHolder extends RecyclerView.ViewHolder {
         public TextView textViewRA;
         public TextView textViewNome;
-        // Outros campos aqui, se necessário
 
         public AlunoViewHolder(@NonNull View itemView) {
             super(itemView);
             textViewRA = itemView.findViewById(R.id.textViewRA);
             textViewNome = itemView.findViewById(R.id.textViewNome);
-            // Inicializar outros campos aqui, se necessário
         }
     }
 }

@@ -17,8 +17,6 @@ public class CadastroAlunoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_aluno);
-
-        // Obter referências para os elementos da interface do usuário
         editTextRA = findViewById(R.id.editTextRA);
         editTextNome = findViewById(R.id.editTextNome);
         editTextCEP = findViewById(R.id.editTextCEP);
@@ -29,8 +27,6 @@ public class CadastroAlunoActivity extends AppCompatActivity {
         editTextUF = findViewById(R.id.editTextUF);
         Button buttonSalvar = findViewById(R.id.buttonSalvar);
         Button buttonBuscarCEP = findViewById(R.id.buttonBuscarCEP);
-
-        // Configurar o listener de clique para o botão de salvar
         buttonSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,7 +34,6 @@ public class CadastroAlunoActivity extends AppCompatActivity {
             }
         });
 
-        // Configurar o listener de clique para o botão de buscar CEP
         buttonBuscarCEP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,29 +43,24 @@ public class CadastroAlunoActivity extends AppCompatActivity {
     }
 
     private void buscarCEP() {
-        // Dentro do método onCreate de CadastroAlunoActivity
         String cep = editTextCEP.getText().toString();
         ViaCEPService service = new ViaCEPService();
         service.buscarCEP(cep, this, new ViaCEPService.ViaCEPResponseListener() {
             @Override
             public void onCEPSuccess(ViaCEPResponse response) {
-                // Verificar se a consulta foi bem sucedida
                 if (response != null) {
-                    // Atualizar os campos de endereço com os dados obtidos
                     editTextLogradouro.setText(response.getLogradouro());
                     editTextComplemento.setText(response.getComplemento());
                     editTextBairro.setText(response.getBairro());
                     editTextCidade.setText(response.getLocalidade());
                     editTextUF.setText(response.getUF());
                 } else {
-                    // Mostrar uma mensagem de erro caso a consulta falhe
                     Toast.makeText(CadastroAlunoActivity.this, "CEP não encontrado", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onCEPError(String error) {
-                // Mostrar uma mensagem de erro caso ocorra um erro na consulta
                 Toast.makeText(CadastroAlunoActivity.this, "Erro ao consultar CEP: " + error, Toast.LENGTH_SHORT).show();
             }
         });
